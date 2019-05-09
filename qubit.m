@@ -1,9 +1,9 @@
-A=[-pi/4 pi/4 0];
+A=[-pi/4 pi/4 0];%change the parameter of the coins here
 B=[0 pi*22/45 pi/12];
-policylen=4;
-policy=[1,1,1,1];
-epi=500;
-psch=([1,-1i]/sqrt(2))';
+policylen=4;%change the lenght of the sequence here
+policy=[1,1,1,1];%change the sequence here
+epi=500;%change the episode here
+psch=([1,-1i]/sqrt(2))';%change the initial state here with the form [c1,c1]/sqrt(c1^2+c2^2)
 state=zeros(epi,1);
 fl=epi;
 pstate=zeros(epi+1,1);
@@ -39,6 +39,7 @@ while epi>0
     epi=epi-1;
 end
 plot(state');hold on
+
 function u=U(x)
 u=[0,0;0,0];
 u(1)=exp(1i*x(1))*cos(x(2));
